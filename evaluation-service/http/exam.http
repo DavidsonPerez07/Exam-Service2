@@ -1,0 +1,36 @@
+### Crear un examen
+POST http://localhost:8080/exam/saveExam
+content-type: application/json
+
+{
+    "introduction": "Esta es la introducción del examen de prueba 2",
+    "maxScore": 5.0,
+    "examLink":  "examenprueba3.edu.co",
+    "questions": [
+        {
+            "description": "primera pregunta del examen prueba 2",
+            "assessment": 2.0,
+            "questionType": "OPENANSWER",
+            "openAnswer": "respuesta a la pregunta abierta del examen 2"
+        },
+        {
+            "description": "segunda pregunta del examen prueba 2",
+            "assessment": 3.0,
+            "questionType": "ONLYANSWER",
+            "options": [
+                {
+                    "description": "primera opcion de la pregunda dos examen prueba 2",
+                    "isCorrect": false
+                },
+                {
+                    "description": "segunda opcion de la pregunda dos examen prueba 2",
+                    "isCorrect": true
+                }
+            ]
+        }
+    ]
+}
+
+### Consultar un examen
+GET http://localhost:8080/exam/getExam?idExam=2 HTTP/1.1
+
